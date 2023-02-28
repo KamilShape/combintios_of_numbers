@@ -1,6 +1,4 @@
 work = True
-# ask_to_continue = True
-# proper_numbers_amount = False
 
 while work:
     ask_to_continue = True
@@ -9,19 +7,18 @@ while work:
     number2 = int(input('Input 2 number: '))
 
     if number1 > number2:
-        print('Number 1 must be higher than number 2')
+        print('Number 1 must be lower than number 2')
         continue
 
     while not proper_numbers_amount:
-        numbers_amount = int(input(f'How many number would you like to take from range {number1, number2}: '))
-        if numbers_amount > number2:
+        k = int(input(f'How many number would you like to take from range {number1, number2}: '))
+        if k > number2:
             print('Numbers amount must be lower than number 2')
             proper_numbers_amount = False
         else:
             proper_numbers_amount = True
 
     n = number2 - number1 + 1
-    k = numbers_amount
     n_factorial = 1
     k_factorial = 1
     n_k_factorial = 1
@@ -40,7 +37,7 @@ while work:
     print(f'There is {comb} combinations.')
 
     while ask_to_continue:
-        con = input('Would you like to continue! (y/n): ')
+        con = input('Would you like to continue? (y/n): ')
         if con == 'y':
             ask_to_continue = False
             work = True
